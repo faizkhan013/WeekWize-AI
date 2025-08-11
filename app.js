@@ -1,5 +1,3 @@
-
-
 let tasks = [];
 let currentTaskId = null;
 let stats = {
