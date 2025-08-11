@@ -8,10 +8,12 @@ let stats = {
     weeklyGoal: 50
 };
 
+
 let aiInsights = [];
 let aiChatHistory = [];
 let aiRecommendationsApplied = 7; 
 let currentAIInsight = 0;
+
 
 const modernCategories = {
     "Class": { 
@@ -34,6 +36,7 @@ const modernCategories = {
     }
 };
 
+
 const modernPriorities = {
     "high": { color: "#FFB703", label: "High Priority" },
     "medium": { color: "#0077B6", label: "Medium Priority" },
@@ -43,6 +46,7 @@ const modernPriorities = {
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const timeSlots = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
 
+
 const modernAIResponses = {
     "schedule optimization": "I've analyzed your schedule using 2025 productivity research and found key optimization opportunities: 1) Moving intensive study sessions to your 10 AM - 2 PM peak performance window, 2) Implementing strategic 10-minute breaks between sessions for 40% better retention, and 3) Scheduling challenging subjects during your natural energy peaks for professional-level results.",
     "routine improvement": "Based on modern productivity patterns, I recommend implementing time-blocking with focus sessions. Your data shows peak performance during mid-morning hours. This approach is proven effective in both academic and corporate environments, with 35% higher completion rates.",
@@ -50,6 +54,7 @@ const modernAIResponses = {
     "conflict resolution": "I've detected scheduling conflicts and applied modern conflict resolution algorithms. The optimized solution considers both your productivity patterns and professional scheduling best practices, ensuring maximum efficiency for your academic and career goals.",
     "default": "I'm your modern AI assistant equipped with 2025 technology. I can help optimize your schedule using professional-grade analytics that work equally well for students and corporate professionals. What would you like to optimize today?"
 };
+
 
 const modernIntelligentInsights = [
     "Modern research shows you're 27% more productive when studying before 2 PM - perfect for professional development",
@@ -63,6 +68,7 @@ const modernIntelligentInsights = [
     "Professional insight: Pre-meal study sessions show 30% better retention rates",
     "Weekend optimization: 9 AM - 11 AM shows highest focus levels for both study and professional work"
 ];
+
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing modern AI-enhanced app...');
@@ -79,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setupGlobalFunctions() {
+
     window.showDashboard = showDashboard;
     window.showAddTaskPage = showAddTaskPage;
     window.showStatsPage = showStatsPage;
@@ -103,6 +110,7 @@ function setupGlobalFunctions() {
     window.selectTimeSlot = selectTimeSlot;
     window.downloadPDF = downloadPDF;
 }
+
 
 function showDashboard() {
     console.log('Navigating to modern dashboard...');
@@ -133,6 +141,7 @@ function exportPDF() {
     renderModernPDFTable();
 }
 
+
 function toggleAIAssistant() {
     console.log('Toggling Modern AI Assistant');
     const panel = document.getElementById('ai-assistant-panel');
@@ -162,6 +171,7 @@ function handleAIChatKeyPress(event) {
         sendModernAIMessage();
     }
 }
+
 
 function refreshAIInsights() {
     console.log('Refreshing modern AI insights');
@@ -321,6 +331,7 @@ function getAITaskOptimization() {
     showMessage('🚀 Modern task optimization complete!', 'success');
 }
 
+
 function showTaskModal(taskId) {
     console.log('Opening modern task modal for ID:', taskId);
     const task = tasks.find(t => t.id === taskId);
@@ -342,6 +353,7 @@ function showTaskModal(taskId) {
     const statusSpan = document.getElementById('modal-task-status');
     statusSpan.textContent = task.status.charAt(0).toUpperCase() + task.status.slice(1);
     statusSpan.className = `status status--${task.status}`;
+    
 
     const aiInsight = generateModernTaskInsight(task);
     document.getElementById('ai-task-suggestion').innerHTML = aiInsight;
@@ -437,9 +449,9 @@ function sendModernAIMessage() {
     
     addModernChatMessage(message, 'user');
     input.value = '';
-
+    
     showModernAITyping();
-
+    
     setTimeout(() => {
         hideModernAITyping();
         const response = generateModernAIResponse(message);
@@ -460,8 +472,10 @@ function addModernChatMessage(message, sender) {
     
     messageDiv.appendChild(contentDiv);
     chatContainer.appendChild(messageDiv);
+    
 
     chatContainer.scrollTop = chatContainer.scrollHeight;
+    
 
     aiChatHistory.push({ message, sender, timestamp: new Date() });
 }
@@ -539,19 +553,24 @@ function initializeApp() {
 }
 
 function initializeModernAIFeatures() {
+
     if (modernIntelligentInsights.length > 0) {
         const insightElement = document.getElementById('current-ai-insight');
         if (insightElement) {
             insightElement.textContent = modernIntelligentInsights[currentAIInsight];
         }
     }
+    
 
     updateModernAIRecommendations();
+    
 
     updateModernAIMetrics();
 }
 
+
 function loadData() {
+
     const savedTasks = localStorage.getItem('weekwise_modern_tasks');
     if (savedTasks) {
         try {
@@ -576,6 +595,7 @@ function loadData() {
     } else {
         calculateStats();
     }
+    
 
     const savedAIData = localStorage.getItem('weekwise_modern_ai_data');
     if (savedAIData) {
@@ -611,6 +631,7 @@ function saveData() {
     try {
         localStorage.setItem('weekwise_modern_tasks', JSON.stringify(tasks));
         localStorage.setItem('weekwise_modern_stats', JSON.stringify(stats));
+        
 
         const aiData = {
             recommendationsApplied: aiRecommendationsApplied,
@@ -653,6 +674,7 @@ function calculateStats() {
     saveData();
 }
 
+
 function renderModernDashboard() {
     updateModernSummaryCards();
     renderModernCalendar();
@@ -669,13 +691,14 @@ function updateModernSummaryCards() {
     if (completedElement) completedElement.textContent = stats.completedTasks;
     if (pendingElement) pendingElement.textContent = stats.pendingTasks;
     if (streakElement) streakElement.textContent = stats.currentStreak;
-
+    
     const aiScore = calculateModernAIOptimizationScore();
     const aiScoreElement = document.getElementById('ai-score');
     if (aiScoreElement) aiScoreElement.textContent = aiScore + '%';
 }
 
 function updateModernAIRecommendations() {
+
     const completionTip = document.getElementById('completion-ai-tip');
     const pendingTip = document.getElementById('pending-ai-tip');
     const streakTip = document.getElementById('streak-ai-tip');
@@ -706,10 +729,14 @@ function updateModernAIRecommendations() {
 }
 
 function calculateModernAIOptimizationScore() {
+    let score = 75; 
+
     const completionRate = tasks.length > 0 ? (stats.completedTasks / tasks.length) * 100 : 0;
     score += completionRate * 0.18;
+    
 
     score += Math.min(stats.currentStreak * 2.5, 18);
+    
 
     const dayDistribution = getModernDayDistribution();
     const balanceScore = calculateModernScheduleBalance(dayDistribution);
@@ -729,7 +756,7 @@ function calculateModernScheduleBalance(distribution) {
     const counts = Object.values(distribution);
     const avg = counts.reduce((a, b) => a + b, 0) / counts.length;
     const variance = counts.reduce((sum, count) => sum + Math.pow(count - avg, 2), 0) / counts.length;
-    return Math.max(0, 12 - variance);
+    return Math.max(0, 12 - variance); 
 }
 
 function renderModernCalendar() {
@@ -737,6 +764,7 @@ function renderModernCalendar() {
     if (!calendarGrid) return;
     
     calendarGrid.innerHTML = '';
+
 
     const emptyHeader = document.createElement('div');
     emptyHeader.className = 'time-slot';
@@ -749,6 +777,7 @@ function renderModernCalendar() {
         dayHeader.textContent = day;
         calendarGrid.appendChild(dayHeader);
     });
+
 
     timeSlots.forEach(time => {
         const timeLabel = document.createElement('div');
@@ -776,6 +805,7 @@ function renderModernCalendar() {
                 }
                 taskElement.textContent = task.title;
                 taskElement.title = `${modernCategories[task.category]?.icon} ${task.title} - ${task.category}`;
+                
 
                 taskElement.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -818,6 +848,7 @@ function updateModernSlotSuggestions() {
         return;
     }
 
+
     const modernEnhancedSlots = availableSlots.map(slot => {
         const timeRange = `${slot}-${(parseInt(slot) + 1).toString().padStart(2, '0')}:00`;
         const score = getModernTimeEfficiencyScore(timeRange);
@@ -848,12 +879,13 @@ function updateModernSlotSuggestions() {
 
 function getModernTimeEfficiencyScore(time) {
     const hour = parseInt(time.split(':')[0]);
+
     if (hour >= 10 && hour <= 12) return 96;
-    if (hour >= 14 && hour <= 16) return 89;
-    if (hour >= 8 && hour <= 10) return 85;
-    if (hour >= 19 && hour <= 21) return 78;
-    if (hour >= 16 && hour <= 18) return 82;
-    return 70;
+    if (hour >= 14 && hour <= 16) return 89; 
+    if (hour >= 8 && hour <= 10) return 85;  
+    if (hour >= 19 && hour <= 21) return 78; 
+    if (hour >= 16 && hour <= 18) return 82; 
+    return 70; 
 }
 
 function updateModernSmartSuggestions() {
@@ -883,6 +915,7 @@ function updateModernSmartSuggestions() {
 
 function generateModernAISmartSuggestions() {
     const suggestions = [];
+    
 
     const dayDistribution = getModernDayDistribution();
     const emptyDays = days.filter(day => dayDistribution[day] === 0);
@@ -894,7 +927,7 @@ function generateModernAISmartSuggestions() {
             confidence: 89
         });
     }
-
+    
     const categoryCount = {};
     tasks.forEach(task => {
         categoryCount[task.category] = (categoryCount[task.category] || 0) + 1;
@@ -907,6 +940,7 @@ function generateModernAISmartSuggestions() {
             confidence: 94
         });
     }
+
 
     const highPriorityPending = tasks.filter(task => 
         task.status === 'pending' && task.priority === 'high'
@@ -922,6 +956,7 @@ function generateModernAISmartSuggestions() {
     
     return suggestions.slice(0, 3);
 }
+
 
 function generateModernScheduleOptimizations() {
     const optimizations = [
@@ -977,7 +1012,7 @@ function findModernAlternativeTime(day, currentTime) {
         }
     }
     
-    return "18:00-19:00";
+    return "18:00-19:00"; 
 }
 
 function getNextModernAvailableDay(currentDay) {
@@ -1082,6 +1117,7 @@ function getModernOptimalTimeForCategory(category) {
 }
 
 function updateModernAIMetrics() {
+
     const predictionAccuracy = document.getElementById('prediction-accuracy');
     const optimizationScore = document.getElementById('optimization-score');
     const patternRecognition = document.getElementById('pattern-recognition');
@@ -1093,6 +1129,7 @@ function updateModernAIMetrics() {
     if (aiRecommendationsCount) aiRecommendationsCount.textContent = aiRecommendationsApplied;
 }
 
+
 function clearForm() {
     const form = document.getElementById('add-task-form');
     if (form) {
@@ -1102,6 +1139,7 @@ function clearForm() {
     if (conflictWarning) {
         conflictWarning.classList.add('hidden');
     }
+    
 
     const aiTimeSuggestion = document.getElementById('ai-time-suggestion');
     if (aiTimeSuggestion) {
@@ -1169,6 +1207,7 @@ function checkTimeConflict(day, time) {
     return tasks.some(task => task.day === day && task.time === time);
 }
 
+
 function renderModernStats() {
     console.log('Rendering modern AI-enhanced stats page');
     setTimeout(() => {
@@ -1224,6 +1263,7 @@ function renderModernCategoryChart() {
             }
         }
     });
+    
 
     const insight = document.getElementById('category-ai-insight');
     if (insight) {
@@ -1292,6 +1332,7 @@ function renderModernPerformanceChart() {
             }
         }
     });
+    
 
     const insight = document.getElementById('performance-ai-insight');
     if (insight) {
@@ -1346,6 +1387,7 @@ function updateModernAIAnalytics() {
     updateModernAIMetrics();
 }
 
+
 function renderModernPDFTable() {
     const tbody = document.getElementById('schedule-tbody');
     if (!tbody) return;
@@ -1384,6 +1426,7 @@ function renderModernPDFTable() {
         `;
         tbody.appendChild(row);
     });
+    
 
     const exportScore = document.getElementById('export-optimization-score');
     if (exportScore) {
@@ -1403,6 +1446,7 @@ function getModernAICalculatedPriority(task) {
     return task.priority.charAt(0).toUpperCase() + task.priority.slice(1);
 }
 
+
 function showMessage(text, type = 'info') {
     const messageContainer = document.getElementById('message-container');
     const message = document.getElementById('message');
@@ -1420,6 +1464,7 @@ function showMessage(text, type = 'info') {
         messageContainer.classList.add('hidden');
     }, 4500);
 }
+
 
 function setupEventListeners() {
     console.log('Setting up modern enhanced event listeners...');
@@ -1470,6 +1515,7 @@ function setupEventListeners() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeTaskModal();
+
             const aiPanel = document.getElementById('ai-assistant-panel');
             if (aiPanel && !aiPanel.classList.contains('hidden')) {
                 toggleAIAssistant();
