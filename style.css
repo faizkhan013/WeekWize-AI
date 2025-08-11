@@ -1,5 +1,4 @@
 :root {
-  /* Primitive Color Tokens */
   --color-white: rgba(255, 255, 255, 1);
   --color-black: rgba(0, 0, 0, 1);
   --color-cream-50: rgba(252, 252, 249, 1);
@@ -23,7 +22,7 @@
   --color-orange-400: rgba(230, 129, 97, 1);
   --color-orange-500: rgba(168, 75, 47, 1);
 
-  /* RGB versions for opacity control */
+
   --color-brown-600-rgb: 94, 82, 64;
   --color-teal-500-rgb: 33, 128, 141;
   --color-slate-900-rgb: 19, 52, 59;
@@ -33,17 +32,17 @@
   --color-orange-500-rgb: 168, 75, 47;
   --color-orange-400-rgb: 230, 129, 97;
 
-  /* Background color tokens (Light Mode) */
-  --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
-  --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
-  --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
-  --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
-  --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
-  --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
-  --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
-  --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
 
-  /* Semantic Color Tokens (Light Mode) */
+  --color-bg-1: rgba(59, 130, 246, 0.08); 
+  --color-bg-2: rgba(245, 158, 11, 0.08); 
+  --color-bg-3: rgba(34, 197, 94, 0.08); 
+  --color-bg-4: rgba(239, 68, 68, 0.08); 
+  --color-bg-5: rgba(147, 51, 234, 0.08); 
+  --color-bg-6: rgba(249, 115, 22, 0.08); 
+  --color-bg-7: rgba(236, 72, 153, 0.08); 
+  --color-bg-8: rgba(6, 182, 212, 0.08);
+
+
   --color-background: var(--color-cream-50);
   --color-surface: var(--color-cream-100);
   --color-text: var(--color-slate-900);
@@ -65,7 +64,7 @@
   --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
   --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
 
-  /* Common style patterns */
+
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
@@ -73,13 +72,13 @@
   --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-  /* RGB versions for opacity control */
+
   --color-success-rgb: 33, 128, 141;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
 
-  /* Typography */
+
   --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
@@ -101,7 +100,7 @@
   --line-height-normal: 1.5;
   --letter-spacing-tight: -0.01em;
 
-  /* Spacing */
+
   --space-0: 0;
   --space-1: 1px;
   --space-2: 2px;
@@ -115,14 +114,14 @@
   --space-24: 24px;
   --space-32: 32px;
 
-  /* Border Radius */
+
   --radius-sm: 6px;
   --radius-base: 8px;
   --radius-md: 10px;
   --radius-lg: 12px;
   --radius-full: 9999px;
 
-  /* Shadows */
+
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
@@ -132,38 +131,38 @@
   --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
     inset 0 -1px 0 rgba(0, 0, 0, 0.03);
 
-  /* Animation */
+
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Layout */
+
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
 }
 
-/* Dark mode colors */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    /* RGB versions for opacity control (Dark Mode) */
+
     --color-gray-400-rgb: 119, 124, 124;
     --color-teal-300-rgb: 50, 184, 198;
     --color-gray-300-rgb: 167, 169, 169;
     --color-gray-200-rgb: 245, 245, 245;
 
-    /* Background color tokens (Dark Mode) */
-    --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-    --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-    --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-    --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-    --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-    --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-    --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-    --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+
+    --color-bg-1: rgba(29, 78, 216, 0.15); 
+    --color-bg-2: rgba(180, 83, 9, 0.15);
+    --color-bg-3: rgba(21, 128, 61, 0.15); 
+    --color-bg-4: rgba(185, 28, 28, 0.15); 
+    --color-bg-5: rgba(107, 33, 168, 0.15); 
+    --color-bg-6: rgba(194, 65, 12, 0.15); 
+    --color-bg-7: rgba(190, 24, 93, 0.15); 
+    --color-bg-8: rgba(8, 145, 178, 0.15); 
     
-    /* Semantic Color Tokens (Dark Mode) */
+
     --color-background: var(--color-charcoal-700);
     --color-surface: var(--color-charcoal-800);
     --color-text: var(--color-gray-200);
@@ -189,7 +188,7 @@
     --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
     --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
 
-    /* Common style patterns - updated for dark mode */
+
     --focus-ring: 0 0 0 3px var(--color-focus-ring);
     --focus-outline: 2px solid var(--color-primary);
     --status-bg-opacity: 0.15;
@@ -197,7 +196,7 @@
     --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-    /* RGB versions for dark mode */
+
     --color-success-rgb: var(--color-teal-300-rgb);
     --color-error-rgb: var(--color-red-400-rgb);
     --color-warning-rgb: var(--color-orange-400-rgb);
@@ -205,25 +204,25 @@
   }
 }
 
-/* Data attribute for manual theme switching */
+
 [data-color-scheme="dark"] {
-  /* RGB versions for opacity control (dark mode) */
+
   --color-gray-400-rgb: 119, 124, 124;
   --color-teal-300-rgb: 50, 184, 198;
   --color-gray-300-rgb: 167, 169, 169;
   --color-gray-200-rgb: 245, 245, 245;
 
-  /* Colorful background palette - Dark Mode */
-  --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-  --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-  --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-  --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-  --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-  --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-  --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-  --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+
+  --color-bg-1: rgba(29, 78, 216, 0.15); 
+  --color-bg-2: rgba(180, 83, 9, 0.15); 
+  --color-bg-3: rgba(21, 128, 61, 0.15); 
+  --color-bg-4: rgba(185, 28, 28, 0.15); 
+  --color-bg-5: rgba(107, 33, 168, 0.15); 
+  --color-bg-6: rgba(194, 65, 12, 0.15);
+  --color-bg-7: rgba(190, 24, 93, 0.15); 
+  --color-bg-8: rgba(8, 145, 178, 0.15); 
   
-  /* Semantic Color Tokens (Dark Mode) */
+
   --color-background: var(--color-charcoal-700);
   --color-surface: var(--color-charcoal-800);
   --color-text: var(--color-gray-200);
@@ -248,7 +247,7 @@
   --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
   --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
 
-  /* Common style patterns - updated for dark mode */
+
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
@@ -256,7 +255,7 @@
   --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
-  /* RGB versions for dark mode */
+
   --color-success-rgb: var(--color-teal-300-rgb);
   --color-error-rgb: var(--color-red-400-rgb);
   --color-warning-rgb: var(--color-orange-400-rgb);
@@ -264,12 +263,11 @@
 }
 
 [data-color-scheme="light"] {
-  /* RGB versions for opacity control (light mode) */
   --color-brown-600-rgb: 94, 82, 64;
   --color-teal-500-rgb: 33, 128, 141;
   --color-slate-900-rgb: 19, 52, 59;
   
-  /* Semantic Color Tokens (Light Mode) */
+
   --color-background: var(--color-cream-50);
   --color-surface: var(--color-cream-100);
   --color-text: var(--color-slate-900);
@@ -290,14 +288,13 @@
   --color-info: var(--color-slate-500);
   --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
 
-  /* RGB versions for light mode */
+
   --color-success-rgb: var(--color-teal-500-rgb);
   --color-error-rgb: var(--color-red-500-rgb);
   --color-warning-rgb: var(--color-orange-500-rgb);
   --color-info-rgb: var(--color-slate-500-rgb);
 }
 
-/* Base styles */
 html {
   font-size: var(--font-size-base);
   font-family: var(--font-family-base);
@@ -319,7 +316,6 @@ body {
   box-sizing: inherit;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -390,7 +386,6 @@ pre code {
   padding: 0;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -469,7 +464,6 @@ pre code {
   cursor: not-allowed;
 }
 
-/* Form elements */
 .form-control {
   display: block;
   width: 100%;
@@ -501,14 +495,12 @@ select.form-control {
   padding-right: var(--space-32);
 }
 
-/* Add a dark mode specific caret */
 @media (prefers-color-scheme: dark) {
   select.form-control {
     background-image: var(--select-caret-dark);
   }
 }
 
-/* Also handle data-color-scheme */
 [data-color-scheme="dark"] select.form-control {
   background-image: var(--select-caret-dark);
 }
@@ -533,7 +525,6 @@ select.form-control {
   margin-bottom: var(--space-16);
 }
 
-/* Card component */
 .card {
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
@@ -557,7 +548,6 @@ select.form-control {
   border-bottom: 1px solid var(--color-card-border-inner);
 }
 
-/* Status indicators - simplified with CSS variables */
 .status {
   display: inline-flex;
   align-items: center;
@@ -607,7 +597,6 @@ select.form-control {
     rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
 }
 
-/* Container layout */
 .container {
   width: 100%;
   margin-right: auto;
@@ -637,7 +626,6 @@ select.form-control {
   }
 }
 
-/* Utility classes */
 .flex {
   display: flex;
 }
@@ -708,7 +696,6 @@ select.form-control {
   display: none;
 }
 
-/* Accessibility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -726,7 +713,6 @@ select.form-control {
   outline-offset: 2px;
 }
 
-/* Dark mode specifics */
 [data-color-scheme="dark"] .btn--outline {
   border: 1px solid var(--color-border-secondary);
 }
@@ -737,16 +723,13 @@ select.form-control {
     format('woff2');
 }
 
-/* Modern 2025 Color Variables - Professional & Student-Friendly */
 :root {
-  /* Modern Primary Colors */
   --modern-primary-blue: #0077B6;
   --modern-light-blue: #90E0EF;
   --modern-accent-blue: #00B4D8;
   --modern-background: #F8F9FA;
   --modern-surface: #FFFFFF;
   
-  /* Secondary Professional Colors */
   --modern-purple: #6A4C93;
   --modern-success-green: #06D6A0;
   --modern-warning-orange: #FFB703;
@@ -754,17 +737,14 @@ select.form-control {
   --modern-text-secondary: #6C757D;
   --modern-border: #E9ECEF;
   
-  /* Modern Gradients */
   --gradient-primary: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
   --gradient-ai: linear-gradient(135deg, #6A4C93 0%, #0077B6 100%);
   --gradient-success: linear-gradient(135deg, #06D6A0 0%, #38D9A9 100%);
   
-  /* Category Colors - Modern & Professional */
   --category-class: #0077B6;
   --category-self-study: #06D6A0;
   --category-project: #6A4C93;
   
-  /* Modern Shadows & Effects */
   --modern-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
   --modern-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --modern-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -772,7 +752,6 @@ select.form-control {
   --modern-radius-sm: 8px;
 }
 
-/* Override design system colors with modern palette */
 html {
   --color-primary: var(--modern-primary-blue);
   --color-primary-hover: #005f8a;
@@ -789,7 +768,6 @@ html {
   --color-btn-primary-text: var(--modern-surface);
 }
 
-/* Page Management */
 .page {
     display: none;
 }
@@ -798,7 +776,6 @@ html {
     display: block;
 }
 
-/* Modern Header with Gradient */
 .header {
     background: linear-gradient(90deg, var(--primary), var(--primary-dark));
     border: none;
@@ -829,7 +806,6 @@ html {
     align-items: center;
 }
 
-/* Modern Button Styles */
 .btn {
     border-radius: var(--modern-radius-sm);
     font-weight: var(--font-weight-medium);
@@ -871,14 +847,12 @@ html {
     color: var(--modern-primary-blue);
 }
 
-/* Main Content */
 .main-content {
     padding: var(--space-32) var(--space-16);
     min-height: calc(100vh - 100px);
     background: var(--modern-background);
 }
 
-/* Modern AI Insights Banner */
 .ai-insights-banner {
     background: var(--gradient-ai);
     border-radius: var(--modern-radius);
@@ -916,7 +890,6 @@ html {
     margin-bottom: var(--space-20);
 }
 
-/* Modern Summary Cards */
 .summary-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -978,7 +951,6 @@ html {
     min-height: 32px;
 }
 
-/* AI Architecture Card */
 .ai-architecture-card {
     margin-bottom: var(--space-32);
     background: var(--modern-surface);
@@ -1004,7 +976,6 @@ html {
     font-style: italic;
 }
 
-/* Dashboard Grid Layout */
 .dashboard-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -1012,7 +983,6 @@ html {
     margin-bottom: var(--space-32);
 }
 
-/* Modern Calendar */
 .calendar-card {
     background: var(--modern-surface);
     border-radius: var(--modern-radius);
@@ -1064,7 +1034,6 @@ html {
     box-shadow: var(--modern-shadow-sm);
 }
 
-/* Modern Task Items with New Category Colors */
 .task-item {
     position: absolute;
     top: var(--space-4);
@@ -1085,7 +1054,6 @@ html {
     box-shadow: var(--modern-shadow-md);
 }
 
-/* Updated Category Colors - Modern & Professional */
 .task-item.class {
     background: var(--category-class);
     border-left: 4px solid #005f8a;
@@ -1115,7 +1083,6 @@ html {
     border-left: 4px solid var(--modern-purple);
 }
 
-/* AI Recommendations Card */
 .ai-recommendations-card {
     background: var(--modern-surface);
     border-radius: var(--modern-radius);
@@ -1182,7 +1149,6 @@ html {
     box-shadow: var(--modern-shadow-sm);
 }
 
-/* Modern AI Assistant Panel */
 .ai-assistant-panel {
     position: fixed;
     right: var(--space-24);
@@ -1369,7 +1335,6 @@ html {
     transform: translateY(-1px);
 }
 
-/* Form Styles with Modern Enhancement */
 .form-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -1491,7 +1456,6 @@ html {
     font-weight: var(--font-weight-medium);
 }
 
-/* Statistics Page with Modern Enhancement */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1555,7 +1519,6 @@ html {
     border-left: 4px solid var(--modern-primary-blue);
 }
 
-/* Modern Focus Meter */
 .focus-meter {
     text-align: center;
     padding: var(--space-24);
@@ -1607,7 +1570,6 @@ html {
     color: var(--modern-text-secondary);
 }
 
-/* Stats Summary */
 .stats-summary {
     display: flex;
     flex-direction: column;
@@ -1631,7 +1593,6 @@ html {
     font-weight: var(--font-weight-bold);
 }
 
-/* AI Insights Card */
 .ai-insights-card {
     background: var(--modern-surface);
     border: 1px solid var(--modern-border);
@@ -1679,7 +1640,6 @@ html {
     line-height: 1.5;
 }
 
-/* Export Table with Modern Enhancement */
 .export-card {
     max-width: 100%;
     overflow-x: auto;
@@ -1771,7 +1731,6 @@ html {
     font-weight: var(--font-weight-medium);
 }
 
-/* Modern Modal */
 .modal {
     position: fixed;
     top: 0;
@@ -1886,7 +1845,6 @@ html {
     flex-wrap: wrap;
 }
 
-/* Message Container */
 .message-container {
     position: fixed;
     top: var(--space-24);
@@ -1934,7 +1892,6 @@ html {
     border-color: rgba(0, 119, 182, 0.3);
 }
 
-/* Status Indicators */
 .status {
     padding: var(--space-6) var(--space-12);
     border-radius: var(--modern-radius-sm);
@@ -1954,7 +1911,6 @@ html {
     border: 1px solid rgba(255, 179, 3, 0.3);
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
@@ -2042,7 +1998,6 @@ html {
     }
 }
 
-/* Modern Animation Effects */
 .task-item, .ai-feature-item, .time-suggestion {
     animation: slideInUp 0.4s ease-out;
 }
@@ -2058,7 +2013,6 @@ html {
     }
 }
 
-/* AI Loading States */
 .ai-loading {
     position: relative;
 }
@@ -2082,7 +2036,6 @@ html {
     100% { transform: rotate(360deg); }
 }
 
-/* AI Glow Effects */
 .ai-glow {
     box-shadow: 0 0 24px rgba(0, 119, 182, 0.15);
     animation: modernAIGlow 3s ease-in-out infinite alternate;
@@ -2097,7 +2050,6 @@ html {
     }
 }
 
-/* AI Typing Indicator */
 .ai-typing {
     display: flex;
     align-items: center;
@@ -2136,7 +2088,6 @@ html {
     }
 }
 
-/* Additional Modern Utility Classes */
 .modern-gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -2153,7 +2104,6 @@ html {
     border-image: linear-gradient(135deg, var(--modern-primary-blue), var(--modern-purple)) 1;
 }
 
-/* Ensure proper spacing and modern feel throughout */
 h1, h2, h3, h4, h5, h6 {
     font-weight: var(--font-weight-semibold);
     letter-spacing: -0.02em;
@@ -2163,13 +2113,12 @@ p {
     line-height: 1.6;
 }
 
-/* Modern focus styles */
 *:focus-visible {
     outline: 2px solid var(--modern-primary-blue);
     outline-offset: 2px;
     border-radius: var(--modern-radius-sm);
 }
-/* === Base Variables (Light Mode Default) === */
+
 :root {
   --bg: #f4f8fc;
   --card-bg: #ffffff;
@@ -2180,7 +2129,6 @@ p {
   --secondary: #94a3b8;
 }
 
-/* === Dark Mode Variables === */
 :root[data-theme="dark"] {
   --bg: #121212;
   --card-bg: #1e1e1e;
@@ -2191,7 +2139,6 @@ p {
   --secondary: #64748b;
 }
 
-/* === Global Styles === */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: var(--bg);
@@ -2257,7 +2204,6 @@ body {
   color: var(--text-light);
 }
 
-/* === Transition for Smooth Mode Switch === */
 * {
   transition: background 0.3s ease, color 0.3s ease;
 }
