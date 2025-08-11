@@ -1473,7 +1473,7 @@ html {
 }
 
 .ai-performance-card h3 {
-    color: var(--modern-surface);
+    color: #141212;
 }
 
 .ai-metrics-grid {
@@ -1494,13 +1494,13 @@ html {
 .ai-metric-value {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
-    color: var(--modern-surface);
+    color: #000000;
     margin-bottom: var(--space-6);
 }
 
 .ai-metric-label {
     font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(0 0 0 / 90%);
     font-weight: var(--font-weight-medium);
 }
 
