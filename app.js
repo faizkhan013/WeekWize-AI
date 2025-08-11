@@ -1,4 +1,3 @@
-// Global variables
 let tasks = [];
 let currentTaskId = null;
 let stats = {
@@ -9,13 +8,11 @@ let stats = {
     weeklyGoal: 50
 };
 
-// AI-related variables
 let aiInsights = [];
 let aiChatHistory = [];
 let aiRecommendationsApplied = 7; 
 let currentAIInsight = 0;
 
-// Modern 2025 Professional Color Scheme
 const modernCategories = {
     "Class": { 
         color: "#0077B6", 
@@ -37,7 +34,6 @@ const modernCategories = {
     }
 };
 
-// Modern Professional Priorities
 const modernPriorities = {
     "high": { color: "#FFB703", label: "High Priority" },
     "medium": { color: "#0077B6", label: "Medium Priority" },
@@ -47,7 +43,6 @@ const modernPriorities = {
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const timeSlots = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
 
-// Modern AI Mock Responses - Professional & Student-Friendly
 const modernAIResponses = {
     "schedule optimization": "I've analyzed your schedule using 2025 productivity research and found key optimization opportunities: 1) Moving intensive study sessions to your 10 AM - 2 PM peak performance window, 2) Implementing strategic 10-minute breaks between sessions for 40% better retention, and 3) Scheduling challenging subjects during your natural energy peaks for professional-level results.",
     "routine improvement": "Based on modern productivity patterns, I recommend implementing time-blocking with focus sessions. Your data shows peak performance during mid-morning hours. This approach is proven effective in both academic and corporate environments, with 35% higher completion rates.",
@@ -56,7 +51,6 @@ const modernAIResponses = {
     "default": "I'm your modern AI assistant equipped with 2025 technology. I can help optimize your schedule using professional-grade analytics that work equally well for students and corporate professionals. What would you like to optimize today?"
 };
 
-// Modern Professional AI Insights
 const modernIntelligentInsights = [
     "Modern research shows you're 27% more productive when studying before 2 PM - perfect for professional development",
     "Your completion rate increases by 43% with optimized 10-minute breaks every hour",
@@ -70,7 +64,6 @@ const modernIntelligentInsights = [
     "Weekend optimization: 9 AM - 11 AM shows highest focus levels for both study and professional work"
 ];
 
-// Initialize application
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing modern AI-enhanced app...');
     try {
@@ -86,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setupGlobalFunctions() {
-    // Make functions globally available
     window.showDashboard = showDashboard;
     window.showAddTaskPage = showAddTaskPage;
     window.showStatsPage = showStatsPage;
@@ -112,7 +104,6 @@ function setupGlobalFunctions() {
     window.downloadPDF = downloadPDF;
 }
 
-// Page Navigation Functions
 function showDashboard() {
     console.log('Navigating to modern dashboard...');
     hideAllPages();
@@ -142,7 +133,6 @@ function exportPDF() {
     renderModernPDFTable();
 }
 
-// Modern AI Assistant Functions
 function toggleAIAssistant() {
     console.log('Toggling Modern AI Assistant');
     const panel = document.getElementById('ai-assistant-panel');
@@ -173,7 +163,6 @@ function handleAIChatKeyPress(event) {
     }
 }
 
-// Modern AI Feature Functions
 function refreshAIInsights() {
     console.log('Refreshing modern AI insights');
     currentAIInsight = (currentAIInsight + 1) % modernIntelligentInsights.length;
@@ -332,7 +321,6 @@ function getAITaskOptimization() {
     showMessage('🚀 Modern task optimization complete!', 'success');
 }
 
-// Task Modal Functions
 function showTaskModal(taskId) {
     console.log('Opening modern task modal for ID:', taskId);
     const task = tasks.find(t => t.id === taskId);
@@ -354,8 +342,7 @@ function showTaskModal(taskId) {
     const statusSpan = document.getElementById('modal-task-status');
     statusSpan.textContent = task.status.charAt(0).toUpperCase() + task.status.slice(1);
     statusSpan.className = `status status--${task.status}`;
-    
-    // Generate modern AI insights for the task
+
     const aiInsight = generateModernTaskInsight(task);
     document.getElementById('ai-task-suggestion').innerHTML = aiInsight;
     
@@ -450,11 +437,9 @@ function sendModernAIMessage() {
     
     addModernChatMessage(message, 'user');
     input.value = '';
-    
-    // Show modern typing indicator
+
     showModernAITyping();
-    
-    // Simulate AI response delay
+
     setTimeout(() => {
         hideModernAITyping();
         const response = generateModernAIResponse(message);
@@ -475,11 +460,9 @@ function addModernChatMessage(message, sender) {
     
     messageDiv.appendChild(contentDiv);
     chatContainer.appendChild(messageDiv);
-    
-    // Scroll to bottom
+
     chatContainer.scrollTop = chatContainer.scrollHeight;
-    
-    // Store in history
+
     aiChatHistory.push({ message, sender, timestamp: new Date() });
 }
 
@@ -513,8 +496,7 @@ function hideModernAITyping() {
 
 function generateModernAIResponse(message) {
     const lowerMessage = message.toLowerCase();
-    
-    // Modern pattern matching for professional and student needs
+
     if (lowerMessage.includes('improve') && lowerMessage.includes('routine')) {
         return modernAIResponses["routine improvement"];
     } else if (lowerMessage.includes('conflict') || lowerMessage.includes('overlap')) {
@@ -557,24 +539,19 @@ function initializeApp() {
 }
 
 function initializeModernAIFeatures() {
-    // Initialize modern AI insights
     if (modernIntelligentInsights.length > 0) {
         const insightElement = document.getElementById('current-ai-insight');
         if (insightElement) {
             insightElement.textContent = modernIntelligentInsights[currentAIInsight];
         }
     }
-    
-    // Update AI-enhanced summary cards
+
     updateModernAIRecommendations();
-    
-    // Initialize modern AI metrics
+
     updateModernAIMetrics();
 }
 
-// Data Management
 function loadData() {
-    // Try to load from localStorage first, otherwise use sample data
     const savedTasks = localStorage.getItem('weekwise_modern_tasks');
     if (savedTasks) {
         try {
@@ -599,8 +576,7 @@ function loadData() {
     } else {
         calculateStats();
     }
-    
-    // Load modern AI-specific data
+
     const savedAIData = localStorage.getItem('weekwise_modern_ai_data');
     if (savedAIData) {
         try {
@@ -635,8 +611,7 @@ function saveData() {
     try {
         localStorage.setItem('weekwise_modern_tasks', JSON.stringify(tasks));
         localStorage.setItem('weekwise_modern_stats', JSON.stringify(stats));
-        
-        // Save modern AI-specific data
+
         const aiData = {
             recommendationsApplied: aiRecommendationsApplied,
             currentInsight: currentAIInsight
@@ -678,7 +653,6 @@ function calculateStats() {
     saveData();
 }
 
-// Modern Dashboard Rendering
 function renderModernDashboard() {
     updateModernSummaryCards();
     renderModernCalendar();
@@ -695,15 +669,13 @@ function updateModernSummaryCards() {
     if (completedElement) completedElement.textContent = stats.completedTasks;
     if (pendingElement) pendingElement.textContent = stats.pendingTasks;
     if (streakElement) streakElement.textContent = stats.currentStreak;
-    
-    // Calculate modern AI optimization score
+
     const aiScore = calculateModernAIOptimizationScore();
     const aiScoreElement = document.getElementById('ai-score');
     if (aiScoreElement) aiScoreElement.textContent = aiScore + '%';
 }
 
 function updateModernAIRecommendations() {
-    // Update modern AI tips for summary cards
     const completionTip = document.getElementById('completion-ai-tip');
     const pendingTip = document.getElementById('pending-ai-tip');
     const streakTip = document.getElementById('streak-ai-tip');
@@ -734,16 +706,11 @@ function updateModernAIRecommendations() {
 }
 
 function calculateModernAIOptimizationScore() {
-    let score = 75; // Modern base score
-    
-    // Bonus for completion rate
     const completionRate = tasks.length > 0 ? (stats.completedTasks / tasks.length) * 100 : 0;
     score += completionRate * 0.18;
-    
-    // Bonus for streak (modern calculation)
+
     score += Math.min(stats.currentStreak * 2.5, 18);
-    
-    // Bonus for balanced schedule
+
     const dayDistribution = getModernDayDistribution();
     const balanceScore = calculateModernScheduleBalance(dayDistribution);
     score += balanceScore;
@@ -762,7 +729,7 @@ function calculateModernScheduleBalance(distribution) {
     const counts = Object.values(distribution);
     const avg = counts.reduce((a, b) => a + b, 0) / counts.length;
     const variance = counts.reduce((sum, count) => sum + Math.pow(count - avg, 2), 0) / counts.length;
-    return Math.max(0, 12 - variance); // Modern balance calculation
+    return Math.max(0, 12 - variance);
 }
 
 function renderModernCalendar() {
@@ -771,7 +738,6 @@ function renderModernCalendar() {
     
     calendarGrid.innerHTML = '';
 
-    // Modern header row
     const emptyHeader = document.createElement('div');
     emptyHeader.className = 'time-slot';
     emptyHeader.textContent = 'Time';
@@ -784,7 +750,6 @@ function renderModernCalendar() {
         calendarGrid.appendChild(dayHeader);
     });
 
-    // Time slots and tasks with modern styling
     timeSlots.forEach(time => {
         const timeLabel = document.createElement('div');
         timeLabel.className = 'time-slot';
@@ -811,8 +776,7 @@ function renderModernCalendar() {
                 }
                 taskElement.textContent = task.title;
                 taskElement.title = `${modernCategories[task.category]?.icon} ${task.title} - ${task.category}`;
-                
-                // Add click handler for task modal
+
                 taskElement.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
@@ -854,7 +818,6 @@ function updateModernSlotSuggestions() {
         return;
     }
 
-    // Modern AI-enhanced suggestions with professional scoring
     const modernEnhancedSlots = availableSlots.map(slot => {
         const timeRange = `${slot}-${(parseInt(slot) + 1).toString().padStart(2, '0')}:00`;
         const score = getModernTimeEfficiencyScore(timeRange);
@@ -885,13 +848,12 @@ function updateModernSlotSuggestions() {
 
 function getModernTimeEfficiencyScore(time) {
     const hour = parseInt(time.split(':')[0]);
-    // Modern 2025 productivity research-based scoring
-    if (hour >= 10 && hour <= 12) return 96; // Peak modern productivity
-    if (hour >= 14 && hour <= 16) return 89; // Professional afternoon focus
-    if (hour >= 8 && hour <= 10) return 85;  // Modern early productivity
-    if (hour >= 19 && hour <= 21) return 78; // Modern evening efficiency
-    if (hour >= 16 && hour <= 18) return 82; // Creative work period
-    return 70; // Other times
+    if (hour >= 10 && hour <= 12) return 96;
+    if (hour >= 14 && hour <= 16) return 89;
+    if (hour >= 8 && hour <= 10) return 85;
+    if (hour >= 19 && hour <= 21) return 78;
+    if (hour >= 16 && hour <= 18) return 82;
+    return 70;
 }
 
 function updateModernSmartSuggestions() {
@@ -921,8 +883,7 @@ function updateModernSmartSuggestions() {
 
 function generateModernAISmartSuggestions() {
     const suggestions = [];
-    
-    // Modern schedule distribution analysis
+
     const dayDistribution = getModernDayDistribution();
     const emptyDays = days.filter(day => dayDistribution[day] === 0);
     
@@ -933,8 +894,7 @@ function generateModernAISmartSuggestions() {
             confidence: 89
         });
     }
-    
-    // Modern category distribution analysis
+
     const categoryCount = {};
     tasks.forEach(task => {
         categoryCount[task.category] = (categoryCount[task.category] || 0) + 1;
@@ -948,7 +908,6 @@ function generateModernAISmartSuggestions() {
         });
     }
 
-    // Modern priority analysis
     const highPriorityPending = tasks.filter(task => 
         task.status === 'pending' && task.priority === 'high'
     ).length;
@@ -964,7 +923,6 @@ function generateModernAISmartSuggestions() {
     return suggestions.slice(0, 3);
 }
 
-// Modern AI Helper Functions
 function generateModernScheduleOptimizations() {
     const optimizations = [
         "🎯 Move high-cognitive tasks to 10 AM - 12 PM (modern peak productivity window)",
@@ -1019,7 +977,7 @@ function findModernAlternativeTime(day, currentTime) {
         }
     }
     
-    return "18:00-19:00"; // Modern default fallback
+    return "18:00-19:00";
 }
 
 function getNextModernAvailableDay(currentDay) {
@@ -1124,7 +1082,6 @@ function getModernOptimalTimeForCategory(category) {
 }
 
 function updateModernAIMetrics() {
-    // Update modern AI performance metrics in stats page
     const predictionAccuracy = document.getElementById('prediction-accuracy');
     const optimizationScore = document.getElementById('optimization-score');
     const patternRecognition = document.getElementById('pattern-recognition');
@@ -1136,7 +1093,6 @@ function updateModernAIMetrics() {
     if (aiRecommendationsCount) aiRecommendationsCount.textContent = aiRecommendationsApplied;
 }
 
-// Modern Task Management
 function clearForm() {
     const form = document.getElementById('add-task-form');
     if (form) {
@@ -1146,8 +1102,7 @@ function clearForm() {
     if (conflictWarning) {
         conflictWarning.classList.add('hidden');
     }
-    
-    // Clear modern AI suggestions
+
     const aiTimeSuggestion = document.getElementById('ai-time-suggestion');
     if (aiTimeSuggestion) {
         aiTimeSuggestion.innerHTML = '';
@@ -1214,7 +1169,6 @@ function checkTimeConflict(day, time) {
     return tasks.some(task => task.day === day && task.time === time);
 }
 
-// Modern Statistics Page
 function renderModernStats() {
     console.log('Rendering modern AI-enhanced stats page');
     setTimeout(() => {
@@ -1270,8 +1224,7 @@ function renderModernCategoryChart() {
             }
         }
     });
-    
-    // Add modern AI insight
+
     const insight = document.getElementById('category-ai-insight');
     if (insight) {
         const dominant = Object.keys(categoryData).reduce((a, b) => categoryData[a] > categoryData[b] ? a : b);
@@ -1339,8 +1292,7 @@ function renderModernPerformanceChart() {
             }
         }
     });
-    
-    // Add modern AI insight
+
     const insight = document.getElementById('performance-ai-insight');
     if (insight) {
         const maxDay = days[performanceData.indexOf(Math.max(...performanceData))];
@@ -1394,7 +1346,6 @@ function updateModernAIAnalytics() {
     updateModernAIMetrics();
 }
 
-// Modern PDF Export
 function renderModernPDFTable() {
     const tbody = document.getElementById('schedule-tbody');
     if (!tbody) return;
@@ -1433,8 +1384,7 @@ function renderModernPDFTable() {
         `;
         tbody.appendChild(row);
     });
-    
-    // Update modern optimization score in export
+
     const exportScore = document.getElementById('export-optimization-score');
     if (exportScore) {
         exportScore.textContent = calculateModernAIOptimizationScore() + '%';
@@ -1453,7 +1403,6 @@ function getModernAICalculatedPriority(task) {
     return task.priority.charAt(0).toUpperCase() + task.priority.slice(1);
 }
 
-// Modern Message System
 function showMessage(text, type = 'info') {
     const messageContainer = document.getElementById('message-container');
     const message = document.getElementById('message');
@@ -1472,7 +1421,6 @@ function showMessage(text, type = 'info') {
     }, 4500);
 }
 
-// Modern Event Listeners Setup
 function setupEventListeners() {
     console.log('Setting up modern enhanced event listeners...');
     
@@ -1522,7 +1470,6 @@ function setupEventListeners() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeTaskModal();
-            // Also close modern AI assistant
             const aiPanel = document.getElementById('ai-assistant-panel');
             if (aiPanel && !aiPanel.classList.contains('hidden')) {
                 toggleAIAssistant();
