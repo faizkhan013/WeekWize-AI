@@ -12,7 +12,7 @@ let stats = {
 // AI-related variables
 let aiInsights = [];
 let aiChatHistory = [];
-let aiRecommendationsApplied = 7; // Updated for modern version
+let aiRecommendationsApplied = 7; 
 let currentAIInsight = 0;
 
 // Modern 2025 Professional Color Scheme

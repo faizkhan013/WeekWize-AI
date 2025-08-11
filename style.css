@@ -737,7 +737,6 @@ select.form-control {
     format('woff2');
 }
 
-/* END PERPLEXITY DESIGN SYSTEM */
 /* Modern 2025 Color Variables - Professional & Student-Friendly */
 :root {
   /* Modern Primary Colors */
@@ -801,7 +800,7 @@ html {
 
 /* Modern Header with Gradient */
 .header {
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
     border: none;
     padding: var(--space-20) 0;
     box-shadow: var(--modern-shadow-md);
@@ -1675,7 +1674,7 @@ html {
 
 .ai-insight-content p {
     margin: 0;
-    color: var(--modern-text-secondary);
+    /* color: var(--modern-text-secondary); */
     font-size: var(--font-size-sm);
     line-height: 1.5;
 }
