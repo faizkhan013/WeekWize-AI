@@ -1,4 +1,4 @@
-# WeekWise AI - Modern Student Planner
+# WeekWise AI
 
 A lightweight, AI-inspired weekly planner for students and professionals.  
 Features:
