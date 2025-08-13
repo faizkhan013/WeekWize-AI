@@ -470,7 +470,7 @@ pre code {
   padding: var(--space-8) var(--space-12);
   font-size: var(--font-size-md);
   line-height: 1.5;
-  color: var(--color-text);
+  color: black;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-base);
