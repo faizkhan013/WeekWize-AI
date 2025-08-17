@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,22 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/scrip.js"></script>
-<script>
-  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/scrip.js"></script>
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
+
 <body>
     <script>
-      window.va = window.va || function () { 
-    (window.vaq = window.vaq || []).push(arguments); 
-  };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+        window.va = window.va || function () {
+            (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <div id="dashboard-page" class="page active">
         <header class="header">
             <div class="container">
@@ -53,7 +55,8 @@
                         <div class="summary-item">
                             <div class="summary-number" id="completed-count">0</div>
                             <div class="summary-label">Completed Tasks</div>
-                            <div class="ai-recommendation" id="completion-ai-tip">AI analyzing completion patterns...</div>
+                            <div class="ai-recommendation" id="completion-ai-tip">AI analyzing completion patterns...
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,23 +157,29 @@
             </div>
             <button class="ai-close-btn" onclick="toggleAIAssistant()">&times;</button>
         </div>
-        
+
         <div class="ai-chat-container" id="ai-chat-container">
             <div class="ai-message">
                 <div class="ai-message-content">
-                    <p>👋 Hello! I'm your AI study assistant with 2025 technology. I can help you optimize your schedule, suggest study improvements, and provide professional academic planning advice suitable for both students and professionals. How can I assist you today?</p>
+                    <p>👋 Hello! I'm your AI study assistant with 2025 technology. I can help you optimize your
+                        schedule, suggest study improvements, and provide professional academic planning advice suitable
+                        for both students and professionals. How can I assist you today?</p>
                 </div>
             </div>
         </div>
-        
+
         <div class="ai-quick-actions">
-            <button class="ai-quick-btn" onclick="askAI('How can I improve my study routine for better productivity?')">Improve Routine</button>
-            <button class="ai-quick-btn" onclick="askAI('Analyze my schedule conflicts and suggest solutions')">Find Conflicts</button>
-            <button class="ai-quick-btn" onclick="askAI('Suggest optimal study times based on research')">Optimal Times</button>
+            <button class="ai-quick-btn"
+                onclick="askAI('How can I improve my study routine for better productivity?')">Improve Routine</button>
+            <button class="ai-quick-btn" onclick="askAI('Analyze my schedule conflicts and suggest solutions')">Find
+                Conflicts</button>
+            <button class="ai-quick-btn" onclick="askAI('Suggest optimal study times based on research')">Optimal
+                Times</button>
         </div>
-        
+
         <div class="ai-input-container">
-            <input type="text" id="ai-chat-input" placeholder="Ask me about study optimization..." onkeypress="handleAIChatKeyPress(event)">
+            <input type="text" id="ai-chat-input" placeholder="Ask me about study optimization..."
+                onkeypress="handleAIChatKeyPress(event)">
             <button class="ai-send-btn" onclick="sendAIMessage()">Send</button>
         </div>
     </div>
@@ -192,7 +201,8 @@
                     <div class="card__body">
                         <div class="form-group">
                             <label class="form-label" for="task-title">Task Title *</label>
-                            <input type="text" id="task-title" class="form-control" required placeholder="Enter your task title">
+                            <input type="text" id="task-title" class="form-control" required
+                                placeholder="Enter your task title">
                             <div class="ai-suggestion" id="title-ai-suggestion"></div>
                         </div>
 
@@ -222,13 +232,15 @@
 
                         <div class="form-group">
                             <label class="form-label" for="task-time">Time *</label>
-                            <input type="text" id="task-time" class="form-control" placeholder="e.g., 09:00-10:00" required>
+                            <input type="text" id="task-time" class="form-control" placeholder="e.g., 09:00-10:00"
+                                required>
                             <div class="ai-time-suggestion" id="ai-time-suggestion"></div>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label" for="task-description">Description</label>
-                            <textarea id="task-description" class="form-control" rows="3" placeholder="Add task description (optional)"></textarea>
+                            <textarea id="task-description" class="form-control" rows="3"
+                                placeholder="Add task description (optional)"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -256,12 +268,14 @@
                         </div>
 
                         <div id="conflict-warning" class="status status--warning hidden">
-                            <strong>🤖 AI Conflict Detection:</strong> This time slot conflicts with an existing task. Consider using suggested alternatives below.
+                            <strong>🤖 AI Conflict Detection:</strong> This time slot conflicts with an existing task.
+                            Consider using suggested alternatives below.
                         </div>
 
                         <div class="form-actions">
                             <button type="submit" class="btn btn--primary" id="save-task-btn">💾 Save Task</button>
-                            <button type="button" class="btn btn--secondary" onclick="getAITaskSuggestion()">🤖 Get AI Suggestion</button>
+                            <button type="button" class="btn btn--secondary" onclick="getAITaskSuggestion()">🤖 Get AI
+                                Suggestion</button>
                             <button type="button" class="btn btn--outline" onclick="showDashboard()">Cancel</button>
                         </div>
                     </div>
@@ -271,10 +285,12 @@
                     <div class="card__body">
                         <h4>🎯 AI Smart Time Suggestions</h4>
                         <div id="slot-suggestions">
-                            <p>Select a day and category to see AI-optimized time slots based on productivity research.</p>
+                            <p>Select a day and category to see AI-optimized time slots based on productivity research.
+                            </p>
                         </div>
                         <div class="ai-learning-note">
-                            <small>💡 AI learns from your patterns to suggest optimal study times for maximum productivity</small>
+                            <small>💡 AI learns from your patterns to suggest optimal study times for maximum
+                                productivity</small>
                         </div>
                     </div>
                 </div>
@@ -320,7 +336,8 @@
                         <div class="chart-container" style="position: relative; height: 320px;">
                             <canvas id="category-chart"></canvas>
                         </div>
-                        <div class="ai-chart-insight" id="category-ai-insight">AI analyzing category distribution...</div>
+                        <div class="ai-chart-insight" id="category-ai-insight">AI analyzing category distribution...
+                        </div>
                     </div>
                 </div>
 
@@ -330,7 +347,8 @@
                         <div class="chart-container" style="position: relative; height: 320px;">
                             <canvas id="performance-chart"></canvas>
                         </div>
-                        <div class="ai-chart-insight" id="performance-ai-insight">AI analyzing performance trends...</div>
+                        <div class="ai-chart-insight" id="performance-ai-insight">AI analyzing performance trends...
+                        </div>
                     </div>
                 </div>
 
@@ -383,21 +401,24 @@
                                 <div class="ai-insight-icon">📚</div>
                                 <div class="ai-insight-content">
                                     <h4>Study Pattern Detected</h4>
-                                    <p>You're 25% more productive when studying before 2 PM based on productivity research</p>
+                                    <p>You're 25% more productive when studying before 2 PM based on productivity
+                                        research</p>
                                 </div>
                             </div>
                             <div class="ai-insight-item">
                                 <div class="ai-insight-icon">⏱️</div>
                                 <div class="ai-insight-content">
                                     <h4>Break Optimization</h4>
-                                    <p>Your completion rate increases by 42% with optimized 10-minute breaks every hour</p>
+                                    <p>Your completion rate increases by 42% with optimized 10-minute breaks every hour
+                                    </p>
                                 </div>
                             </div>
                             <div class="ai-insight-item">
                                 <div class="ai-insight-icon">📅</div>
                                 <div class="ai-insight-content">
                                     <h4>Peak Days Identified</h4>
-                                    <p>Tuesday and Thursday are your most productive days for professional-level work</p>
+                                    <p>Tuesday and Thursday are your most productive days for professional-level work
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -425,9 +446,11 @@
                 <div class="card__body">
                     <h3>🗓️ AI-Optimized Weekly Schedule</h3>
                     <div class="export-ai-summary">
-                        <p><strong>🤖 AI Analysis:</strong> Schedule optimized using 2025 productivity research for maximum efficiency and professional results.</p>
+                        <p><strong>🤖 AI Analysis:</strong> Schedule optimized using 2025 productivity research for
+                            maximum efficiency and professional results.</p>
                         <p><strong>Optimization Score:</strong> <span id="export-optimization-score">89%</span></p>
-                        <p><strong>Target Audience:</strong> Professional-grade planning suitable for students and corporate environments</p>
+                        <p><strong>Target Audience:</strong> Professional-grade planning suitable for students and
+                            corporate environments</p>
                     </div>
                     <div class="export-table">
                         <table id="schedule-table">
@@ -450,7 +473,7 @@
         </main>
     </div>
 
-    
+
     <div id="task-modal" class="modal hidden">
         <div class="modal-content">
             <div class="modal-header">
@@ -468,13 +491,16 @@
                 </div>
                 <div class="ai-task-insights" id="ai-task-insights">
                     <h4>🤖 AI Insights</h4>
-                    <div class="ai-task-suggestion" id="ai-task-suggestion">Analyzing task optimization opportunities...</div>
+                    <div class="ai-task-suggestion" id="ai-task-suggestion">Analyzing task optimization opportunities...
+                    </div>
                 </div>
                 <div class="modal-actions">
-                    <button class="btn btn--primary" onclick="toggleTaskStatus()" id="toggle-status-btn">Toggle Status</button>
+                    <button class="btn btn--primary" onclick="toggleTaskStatus()" id="toggle-status-btn">Toggle
+                        Status</button>
                     <button class="btn btn--secondary" onclick="getAITaskOptimization()">🤖 AI Optimize</button>
                     <button class="btn btn--outline" onclick="editTask()">Edit</button>
-                    <button class="btn btn--outline" style="background: #FFB703; color: white; border-color: #FFB703;" onclick="deleteTask()" id="delete-task-btn">Delete</button>
+                    <button class="btn btn--outline" style="background: #FFB703; color: white; border-color: #FFB703;"
+                        onclick="deleteTask()" id="delete-task-btn">Delete</button>
                 </div>
             </div>
         </div>
@@ -488,34 +514,36 @@
 
     <script src="app.js"></script>
     <script>
-const themeToggle = document.getElementById('theme-toggle');
+        const themeToggle = document.getElementById('theme-toggle');
 
 
-(function() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-  } else {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeToggle.textContent = '☀️ Light Mode';
-    }
-  }
-})();
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                themeToggle.textContent = savedTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+            } else {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    themeToggle.textContent = '☀️ Light Mode';
+                }
+            }
+        })();
 
 
-themeToggle.addEventListener('click', () => {
-  const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  localStorage.setItem('theme', currentTheme);
-  themeToggle.textContent = currentTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-});
-</script>
-<footer style="text-align: center; padding: 20px; background-color: #f1f1f1;">
-  Built by-  
-  <a href="https://www.linkedin.com/in/faizkhan013" target="_blank" style="text-decoration: underline; color: #0077b5;"> Mohammad Faiz Khan
-  </a>
-</footer>
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+    </script>
+    <footer style="text-align: center; padding: 20px; background-color: #f1f1f1;">
+        Built by-
+        <a href="https://www.linkedin.com/in/faizkhan013" target="_blank"
+            style="text-decoration: underline; color: #0077b5;"> Mohammad Faiz Khan
+        </a>
+    </footer>
 </body>
+
 </html>

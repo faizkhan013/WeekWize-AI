@@ -11,26 +11,26 @@ let stats = {
 
 let aiInsights = [];
 let aiChatHistory = [];
-let aiRecommendationsApplied = 7; 
+let aiRecommendationsApplied = 7;
 let currentAIInsight = 0;
 
 
 const modernCategories = {
-    "Class": { 
-        color: "#0077B6", 
-        description: "Scheduled classes and lectures", 
+    "Class": {
+        color: "#0077B6",
+        description: "Scheduled classes and lectures",
         icon: "🎓",
         gradient: "linear-gradient(135deg, #0077B6 0%, #00B4D8 100%)"
     },
-    "Self Study": { 
-        color: "#06D6A0", 
-        description: "Independent study sessions", 
+    "Self Study": {
+        color: "#06D6A0",
+        description: "Independent study sessions",
         icon: "📚",
         gradient: "linear-gradient(135deg, #06D6A0 0%, #38D9A9 100%)"
     },
-    "Project": { 
-        color: "#6A4C93", 
-        description: "Project work and assignments", 
+    "Project": {
+        color: "#6A4C93",
+        description: "Project work and assignments",
         icon: "💻",
         gradient: "linear-gradient(135deg, #6A4C93 0%, #8E44AD 100%)"
     }
@@ -70,7 +70,7 @@ const modernIntelligentInsights = [
 ];
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM loaded, initializing modern AI-enhanced app...');
     try {
         initializeApp();
@@ -183,7 +183,7 @@ function refreshAIInsights() {
 function optimizeSchedule() {
     console.log('Optimizing schedule with modern AI');
     showMessage('🤖 Modern AI is optimizing your schedule using 2025 research...', 'info');
-    
+
     setTimeout(() => {
         const suggestions = generateModernScheduleOptimizations();
         document.getElementById('schedule-suggestions').innerHTML = suggestions;
@@ -194,7 +194,7 @@ function optimizeSchedule() {
 function analyzeStudyPatterns() {
     console.log('Analyzing study patterns with modern AI');
     showMessage('🤖 Modern AI analyzing your productivity patterns...', 'info');
-    
+
     setTimeout(() => {
         const analysis = `
             <div class="ai-analysis-result">
@@ -208,7 +208,7 @@ function analyzeStudyPatterns() {
                 </ul>
             </div>
         `;
-        
+
         document.getElementById('suggestions-list').innerHTML = analysis;
         showMessage('📊 Modern pattern analysis complete!', 'success');
     }, 1800);
@@ -217,7 +217,7 @@ function analyzeStudyPatterns() {
 function suggestOptimalTimes() {
     console.log('Suggesting optimal times with modern AI');
     showMessage('🤖 Finding optimal times using modern productivity research...', 'info');
-    
+
     setTimeout(() => {
         const suggestions = `
             <div class="ai-time-suggestions">
@@ -236,7 +236,7 @@ function suggestOptimalTimes() {
                 </div>
             </div>
         `;
-        
+
         document.getElementById('suggestions-list').innerHTML = suggestions;
         showMessage('⏰ Modern optimal times identified!', 'success');
     }, 1200);
@@ -245,7 +245,7 @@ function suggestOptimalTimes() {
 function balanceWorkload() {
     console.log('Balancing workload with modern AI');
     showMessage('🤖 Modern AI balancing your workload for optimal productivity...', 'info');
-    
+
     setTimeout(() => {
         const balance = `
             <div class="ai-workload-balance">
@@ -262,7 +262,7 @@ function balanceWorkload() {
                 <p style="margin-top: 16px; color: #6A4C93; font-weight: 500;"><em>This modern distribution will improve your weekly consistency by 47%</em></p>
             </div>
         `;
-        
+
         document.getElementById('suggestions-list').innerHTML = balance;
         showMessage('⚖️ Modern workload balanced for optimal productivity!', 'success');
     }, 2100);
@@ -271,7 +271,7 @@ function balanceWorkload() {
 function resolveConflicts() {
     console.log('Resolving conflicts with modern AI');
     showMessage('🤖 Modern AI scanning for conflicts using advanced algorithms...', 'info');
-    
+
     setTimeout(() => {
         const conflicts = findModernScheduleConflicts();
         if (conflicts.length === 0) {
@@ -303,16 +303,16 @@ function resolveConflicts() {
 function getAITaskSuggestion() {
     console.log('Getting modern AI task suggestion');
     showMessage('🤖 Modern AI analyzing your schedule for optimal task placement...', 'info');
-    
+
     setTimeout(() => {
         const category = document.getElementById('task-category').value;
         const day = document.getElementById('task-day').value;
-        
+
         if (!category) {
             showMessage('Please select a category first for modern AI suggestions.', 'warning');
             return;
         }
-        
+
         const suggestions = generateModernAITaskSuggestions(category, day);
         document.getElementById('ai-time-suggestion').innerHTML = suggestions;
         showMessage('✨ Modern AI suggestions generated!', 'success');
@@ -322,10 +322,10 @@ function getAITaskSuggestion() {
 function getAITaskOptimization() {
     console.log('Getting modern AI task optimization');
     if (!currentTaskId) return;
-    
+
     const task = tasks.find(t => t.id === currentTaskId);
     if (!task) return;
-    
+
     const optimization = generateModernTaskOptimization(task);
     document.getElementById('ai-task-suggestion').innerHTML = optimization;
     showMessage('🚀 Modern task optimization complete!', 'success');
@@ -342,22 +342,22 @@ function showTaskModal(taskId) {
     }
 
     currentTaskId = taskId;
-    
+
     document.getElementById('modal-task-title').textContent = task.title;
     document.getElementById('modal-task-category').textContent = `${modernCategories[task.category]?.icon || ''} ${task.category}`;
     document.getElementById('modal-task-day').textContent = task.day;
     document.getElementById('modal-task-time').textContent = task.time;
     document.getElementById('modal-task-description').textContent = task.description || 'No description provided';
     document.getElementById('modal-task-priority').textContent = modernPriorities[task.priority] ? modernPriorities[task.priority].label : 'Medium Priority';
-    
+
     const statusSpan = document.getElementById('modal-task-status');
     statusSpan.textContent = task.status.charAt(0).toUpperCase() + task.status.slice(1);
     statusSpan.className = `status status--${task.status}`;
-    
+
 
     const aiInsight = generateModernTaskInsight(task);
     document.getElementById('ai-task-suggestion').innerHTML = aiInsight;
-    
+
     document.getElementById('task-modal').classList.remove('hidden');
 }
 
@@ -373,18 +373,18 @@ function toggleTaskStatus() {
         showMessage('No task selected!', 'error');
         return;
     }
-    
+
     const task = tasks.find(t => t.id === currentTaskId);
     if (!task) {
         console.error('Task not found for toggle:', currentTaskId);
         showMessage('Task not found!', 'error');
         return;
     }
-    
+
     const oldStatus = task.status;
     task.status = task.status === 'completed' ? 'pending' : 'completed';
     console.log(`Task "${task.title}" status changed from ${oldStatus} to ${task.status}`);
-    
+
     saveData();
     showMessage(`✅ Task marked as ${task.status}!`, 'success');
     closeTaskModal();
@@ -403,20 +403,20 @@ function deleteTask() {
         showMessage('No task selected for deletion!', 'error');
         return;
     }
-    
+
     const task = tasks.find(t => t.id === currentTaskId);
     if (!task) {
         console.error('Task not found for deletion:', currentTaskId);
         showMessage('Task not found!', 'error');
         return;
     }
-    
+
     if (confirm(`Are you sure you want to delete "${task.title}"?`)) {
         console.log('Deleting task:', task.title);
         const initialCount = tasks.length;
         tasks = tasks.filter(t => t.id !== currentTaskId);
         console.log(`Tasks reduced from ${initialCount} to ${tasks.length}`);
-        
+
         saveData();
         showMessage('🗑️ Task deleted successfully!', 'success');
         closeTaskModal();
@@ -437,7 +437,7 @@ function selectTimeSlot(time) {
 }
 
 function downloadPDF() {
-    const { jsPDF } = window.jspdf; 
+    const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
     doc.setFontSize(18);
@@ -448,7 +448,7 @@ function downloadPDF() {
     doc.text(`AI Optimization Score: ${score}%`, 14, 30);
 
 
-    const table = document.getElementById("schedule-tbody").parentElement; 
+    const table = document.getElementById("schedule-tbody").parentElement;
 
 
     if (doc.autoTable) {
@@ -458,8 +458,8 @@ function downloadPDF() {
         let yPos = 40;
         table.querySelectorAll("tr").forEach(row => {
             let rowText = Array.from(row.querySelectorAll("td, th"))
-                               .map(cell => cell.innerText)
-                               .join(" | ");
+                .map(cell => cell.innerText)
+                .join(" | ");
             doc.text(rowText, 14, yPos);
             yPos += 8;
         });
@@ -471,14 +471,14 @@ function downloadPDF() {
 function sendModernAIMessage() {
     const input = document.getElementById('ai-chat-input');
     const message = input.value.trim();
-    
+
     if (!message) return;
-    
+
     addModernChatMessage(message, 'user');
     input.value = '';
-    
+
     showModernAITyping();
-    
+
     setTimeout(() => {
         hideModernAITyping();
         const response = generateModernAIResponse(message);
@@ -489,20 +489,20 @@ function sendModernAIMessage() {
 function addModernChatMessage(message, sender) {
     const chatContainer = document.getElementById('ai-chat-container');
     if (!chatContainer) return;
-    
+
     const messageDiv = document.createElement('div');
     messageDiv.className = `ai-message ${sender === 'user' ? 'user-message' : ''}`;
-    
+
     const contentDiv = document.createElement('div');
     contentDiv.className = 'ai-message-content';
     contentDiv.textContent = message;
-    
+
     messageDiv.appendChild(contentDiv);
     chatContainer.appendChild(messageDiv);
-    
+
 
     chatContainer.scrollTop = chatContainer.scrollHeight;
-    
+
 
     aiChatHistory.push({ message, sender, timestamp: new Date() });
 }
@@ -510,11 +510,11 @@ function addModernChatMessage(message, sender) {
 function showModernAITyping() {
     const chatContainer = document.getElementById('ai-chat-container');
     if (!chatContainer) return;
-    
+
     const typingDiv = document.createElement('div');
     typingDiv.className = 'ai-typing';
     typingDiv.id = 'modern-ai-typing-indicator';
-    
+
     typingDiv.innerHTML = `
         <div class="ai-typing-dots">
             <div class="ai-typing-dot"></div>
@@ -523,7 +523,7 @@ function showModernAITyping() {
         </div>
         <span>Modern AI is thinking...</span>
     `;
-    
+
     chatContainer.appendChild(typingDiv);
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
@@ -587,10 +587,10 @@ function initializeModernAIFeatures() {
             insightElement.textContent = modernIntelligentInsights[currentAIInsight];
         }
     }
-    
+
 
     updateModernAIRecommendations();
-    
+
 
     updateModernAIMetrics();
 }
@@ -622,7 +622,7 @@ function loadData() {
     } else {
         calculateStats();
     }
-    
+
 
     const savedAIData = localStorage.getItem('weekwise_modern_ai_data');
     if (savedAIData) {
@@ -638,18 +638,18 @@ function loadData() {
 
 function loadModernSampleData() {
     tasks = [
-        {id: 1, title: "Advanced Calculus", category: "Class", day: "Monday", time: "09:00-10:30", description: "Differential equations and integration", reminder: true, status: "completed", priority: "high", notes: "Review chapter 5", created_date: "2025-01-08"},
-        {id: 2, title: "Machine Learning Project", category: "Project", day: "Monday", time: "14:00-16:00", description: "Neural network implementation", reminder: true, status: "pending", priority: "high", notes: "Focus on backpropagation", created_date: "2025-01-08"},
-        {id: 3, title: "Python Programming", category: "Self Study", day: "Monday", time: "19:00-20:00", description: "Data structures practice", reminder: false, status: "completed", priority: "medium", notes: "Hash tables and trees", created_date: "2025-01-08"},
-        {id: 4, title: "Database Systems", category: "Class", day: "Tuesday", time: "10:00-11:30", description: "SQL and normalization", reminder: true, status: "completed", priority: "high", notes: "Assignment due Friday", created_date: "2025-01-09"},
-        {id: 5, title: "Web Development", category: "Project", day: "Tuesday", time: "15:00-17:30", description: "React component development", reminder: true, status: "pending", priority: "high", notes: "State management", created_date: "2025-01-09"},
-        {id: 6, title: "Statistics Review", category: "Self Study", day: "Tuesday", time: "20:00-21:00", description: "Hypothesis testing", reminder: false, status: "pending", priority: "low", notes: "Practice problems", created_date: "2025-01-09"},
-        {id: 7, title: "Computer Graphics", category: "Class", day: "Wednesday", time: "11:00-12:30", description: "3D transformations", reminder: true, status: "pending", priority: "medium", notes: "Matrix operations", created_date: "2025-01-10"},
-        {id: 8, title: "AI Research Paper", category: "Project", day: "Wednesday", time: "16:00-18:00", description: "Literature review", reminder: true, status: "pending", priority: "high", notes: "20+ sources needed", created_date: "2025-01-10"},
-        {id: 9, title: "Algorithms Study", category: "Self Study", day: "Wednesday", time: "21:00-22:30", description: "Dynamic programming", reminder: false, status: "completed", priority: "medium", notes: "Knapsack problem", created_date: "2025-01-10"},
-        {id: 10, title: "Software Engineering", category: "Class", day: "Thursday", time: "09:00-10:30", description: "Design patterns", reminder: true, status: "pending", priority: "high", notes: "Observer pattern", created_date: "2025-01-10"}
+        { id: 1, title: "Advanced Calculus", category: "Class", day: "Monday", time: "09:00-10:30", description: "Differential equations and integration", reminder: true, status: "completed", priority: "high", notes: "Review chapter 5", created_date: "2025-01-08" },
+        { id: 2, title: "Machine Learning Project", category: "Project", day: "Monday", time: "14:00-16:00", description: "Neural network implementation", reminder: true, status: "pending", priority: "high", notes: "Focus on backpropagation", created_date: "2025-01-08" },
+        { id: 3, title: "Python Programming", category: "Self Study", day: "Monday", time: "19:00-20:00", description: "Data structures practice", reminder: false, status: "completed", priority: "medium", notes: "Hash tables and trees", created_date: "2025-01-08" },
+        { id: 4, title: "Database Systems", category: "Class", day: "Tuesday", time: "10:00-11:30", description: "SQL and normalization", reminder: true, status: "completed", priority: "high", notes: "Assignment due Friday", created_date: "2025-01-09" },
+        { id: 5, title: "Web Development", category: "Project", day: "Tuesday", time: "15:00-17:30", description: "React component development", reminder: true, status: "pending", priority: "high", notes: "State management", created_date: "2025-01-09" },
+        { id: 6, title: "Statistics Review", category: "Self Study", day: "Tuesday", time: "20:00-21:00", description: "Hypothesis testing", reminder: false, status: "pending", priority: "low", notes: "Practice problems", created_date: "2025-01-09" },
+        { id: 7, title: "Computer Graphics", category: "Class", day: "Wednesday", time: "11:00-12:30", description: "3D transformations", reminder: true, status: "pending", priority: "medium", notes: "Matrix operations", created_date: "2025-01-10" },
+        { id: 8, title: "AI Research Paper", category: "Project", day: "Wednesday", time: "16:00-18:00", description: "Literature review", reminder: true, status: "pending", priority: "high", notes: "20+ sources needed", created_date: "2025-01-10" },
+        { id: 9, title: "Algorithms Study", category: "Self Study", day: "Wednesday", time: "21:00-22:30", description: "Dynamic programming", reminder: false, status: "completed", priority: "medium", notes: "Knapsack problem", created_date: "2025-01-10" },
+        { id: 10, title: "Software Engineering", category: "Class", day: "Thursday", time: "09:00-10:30", description: "Design patterns", reminder: true, status: "pending", priority: "high", notes: "Observer pattern", created_date: "2025-01-10" }
     ];
-    
+
     console.log('Loaded modern sample data:', tasks.length, 'tasks');
     saveData();
 }
@@ -658,14 +658,14 @@ function saveData() {
     try {
         localStorage.setItem('weekwise_modern_tasks', JSON.stringify(tasks));
         localStorage.setItem('weekwise_modern_stats', JSON.stringify(stats));
-        
+
 
         const aiData = {
             recommendationsApplied: aiRecommendationsApplied,
             currentInsight: currentAIInsight
         };
         localStorage.setItem('weekwise_modern_ai_data', JSON.stringify(aiData));
-        
+
         console.log('Modern data saved successfully');
     } catch (e) {
         console.error('Error saving data:', e);
@@ -676,7 +676,7 @@ function saveData() {
 function calculateStats() {
     stats.completedTasks = tasks.filter(task => task.status === 'completed').length;
     stats.pendingTasks = tasks.filter(task => task.status === 'pending').length;
-    
+
     let streak = 0;
     const sortedTasks = [...tasks].sort((a, b) => new Date(b.created_date) - new Date(a.created_date));
     for (let task of sortedTasks) {
@@ -687,7 +687,7 @@ function calculateStats() {
         }
     }
     stats.currentStreak = streak;
-    
+
     stats.totalHours = tasks.reduce((total, task) => {
         if (task.time.includes('-')) {
             const [start, end] = task.time.split('-');
@@ -697,7 +697,7 @@ function calculateStats() {
         }
         return total + 1;
     }, 0);
-    
+
     saveData();
 }
 
@@ -714,11 +714,11 @@ function updateModernSummaryCards() {
     const completedElement = document.getElementById('completed-count');
     const pendingElement = document.getElementById('pending-count');
     const streakElement = document.getElementById('streak-count');
-    
+
     if (completedElement) completedElement.textContent = stats.completedTasks;
     if (pendingElement) pendingElement.textContent = stats.pendingTasks;
     if (streakElement) streakElement.textContent = stats.currentStreak;
-    
+
     const aiScore = calculateModernAIOptimizationScore();
     const aiScoreElement = document.getElementById('ai-score');
     if (aiScoreElement) aiScoreElement.textContent = aiScore + '%';
@@ -729,7 +729,7 @@ function updateModernAIRecommendations() {
     const completionTip = document.getElementById('completion-ai-tip');
     const pendingTip = document.getElementById('pending-ai-tip');
     const streakTip = document.getElementById('streak-ai-tip');
-    
+
     if (completionTip) {
         if (stats.completedTasks > 5) {
             completionTip.textContent = "Excellent momentum! Professional-level consistency";
@@ -737,7 +737,7 @@ function updateModernAIRecommendations() {
             completionTip.textContent = "Focus on high-priority tasks using modern techniques";
         }
     }
-    
+
     if (pendingTip) {
         if (stats.pendingTasks > 8) {
             pendingTip.textContent = "Consider modern task breakdown strategies";
@@ -745,7 +745,7 @@ function updateModernAIRecommendations() {
             pendingTip.textContent = "Perfect task balance for productivity";
         }
     }
-    
+
     if (streakTip) {
         if (stats.currentStreak > 3) {
             streakTip.textContent = "Outstanding consistency! Professional standard";
@@ -756,19 +756,19 @@ function updateModernAIRecommendations() {
 }
 
 function calculateModernAIOptimizationScore() {
-    let score = 75; 
+    let score = 75;
 
     const completionRate = tasks.length > 0 ? (stats.completedTasks / tasks.length) * 100 : 0;
     score += completionRate * 0.18;
-    
+
 
     score += Math.min(stats.currentStreak * 2.5, 18);
-    
+
 
     const dayDistribution = getModernDayDistribution();
     const balanceScore = calculateModernScheduleBalance(dayDistribution);
     score += balanceScore;
-    
+
     return Math.min(Math.round(score), 100);
 }
 
@@ -783,13 +783,13 @@ function calculateModernScheduleBalance(distribution) {
     const counts = Object.values(distribution);
     const avg = counts.reduce((a, b) => a + b, 0) / counts.length;
     const variance = counts.reduce((sum, count) => sum + Math.pow(count - avg, 2), 0) / counts.length;
-    return Math.max(0, 12 - variance); 
+    return Math.max(0, 12 - variance);
 }
 
 function renderModernCalendar() {
     const calendarGrid = document.getElementById('calendar-grid');
     if (!calendarGrid) return;
-    
+
     calendarGrid.innerHTML = '';
 
 
@@ -817,7 +817,7 @@ function renderModernCalendar() {
             cell.className = 'calendar-cell';
             cell.dataset.day = day;
             cell.dataset.time = time;
-            
+
             const dayTasks = tasks.filter(task => {
                 if (task.day !== day) return false;
                 const taskTime = task.time.split('-')[0];
@@ -832,15 +832,15 @@ function renderModernCalendar() {
                 }
                 taskElement.textContent = task.title;
                 taskElement.title = `${modernCategories[task.category]?.icon} ${task.title} - ${task.category}`;
-                
 
-                taskElement.addEventListener('click', function(e) {
+
+                taskElement.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
                     console.log('Modern task clicked:', task.title);
                     showTaskModal(task.id);
                 });
-                
+
                 cell.appendChild(taskElement);
             });
 
@@ -864,7 +864,7 @@ function updateModernSlotSuggestions() {
     const selectedDay = daySelect.value;
     const selectedCategory = categorySelect.value;
     const busyTimes = tasks.filter(task => task.day === selectedDay).map(task => task.time);
-    
+
     const availableSlots = timeSlots.filter(slot => {
         const timeRange = `${slot}-${(parseInt(slot) + 1).toString().padStart(2, '0')}:00`;
         return !busyTimes.includes(timeRange);
@@ -881,7 +881,7 @@ function updateModernSlotSuggestions() {
         const score = getModernTimeEfficiencyScore(timeRange);
         const isOptimal = score > 88;
         const isProfessional = score > 80;
-        
+
         return {
             time: timeRange,
             score: score,
@@ -892,11 +892,11 @@ function updateModernSlotSuggestions() {
     }).sort((a, b) => b.score - a.score);
 
     suggestionsDiv.innerHTML = modernEnhancedSlots.map(slot => {
-        const className = slot.isOptimal ? 'time-suggestion ai-recommended' : 
-                        slot.isProfessional ? 'time-suggestion available' : 'time-suggestion available';
-        const bgColor = slot.isOptimal ? 'rgba(106, 76, 147, 0.06)' : 
-                       slot.isProfessional ? 'rgba(0, 119, 182, 0.06)' : 'rgba(6, 214, 160, 0.06)';
-        
+        const className = slot.isOptimal ? 'time-suggestion ai-recommended' :
+            slot.isProfessional ? 'time-suggestion available' : 'time-suggestion available';
+        const bgColor = slot.isOptimal ? 'rgba(106, 76, 147, 0.06)' :
+            slot.isProfessional ? 'rgba(0, 119, 182, 0.06)' : 'rgba(6, 214, 160, 0.06)';
+
         return `<div class="${className}" onclick="selectTimeSlot('${slot.time}')" style="background: ${bgColor};">
             <strong>${slot.time}</strong> - ${slot.recommendation}<br>
             <small style="color: #6C757D;">Modern Efficiency: ${slot.score}% | Perfect for ${selectedCategory.toLowerCase()}</small>
@@ -908,30 +908,30 @@ function getModernTimeEfficiencyScore(time) {
     const hour = parseInt(time.split(':')[0]);
 
     if (hour >= 10 && hour <= 12) return 96;
-    if (hour >= 14 && hour <= 16) return 89; 
-    if (hour >= 8 && hour <= 10) return 85;  
-    if (hour >= 19 && hour <= 21) return 78; 
-    if (hour >= 16 && hour <= 18) return 82; 
-    return 70; 
+    if (hour >= 14 && hour <= 16) return 89;
+    if (hour >= 8 && hour <= 10) return 85;
+    if (hour >= 19 && hour <= 21) return 78;
+    if (hour >= 16 && hour <= 18) return 82;
+    return 70;
 }
 
 function updateModernSmartSuggestions() {
     const suggestionsList = document.getElementById('suggestions-list');
     if (!suggestionsList) return;
-    
+
     if (tasks.length === 0) {
         suggestionsList.innerHTML = '<p style="color: #0077B6; text-align: center; padding: 20px;">Add your first task to unlock modern AI-powered insights and professional-grade recommendations!</p>';
         return;
     }
 
     const suggestions = generateModernAISmartSuggestions();
-    
+
     if (suggestions.length === 0) {
         suggestionsList.innerHTML = '<p style="color: #06D6A0; text-align: center; padding: 20px; background: rgba(6, 214, 160, 0.08); border-radius: 12px; border: 1px solid rgba(6, 214, 160, 0.2);">🎉 Excellent! Your schedule is professionally optimized according to modern AI analysis.</p>';
         return;
     }
 
-    suggestionsList.innerHTML = suggestions.map(suggestion => 
+    suggestionsList.innerHTML = suggestions.map(suggestion =>
         `<div class="suggestion-item" style="padding: 16px; margin: 12px 0; background: rgba(0, 119, 182, 0.06); border-radius: 8px; border-left: 4px solid #0077B6;">
             <strong style="color: #0077B6;">🤖 ${suggestion.title}</strong>
             <p style="margin: 8px 0 0 0; color: #1A1D23;">${suggestion.description}</p>
@@ -942,11 +942,11 @@ function updateModernSmartSuggestions() {
 
 function generateModernAISmartSuggestions() {
     const suggestions = [];
-    
+
 
     const dayDistribution = getModernDayDistribution();
     const emptyDays = days.filter(day => dayDistribution[day] === 0);
-    
+
     if (emptyDays.length > 0) {
         suggestions.push({
             title: "Modern Schedule Balance Optimization",
@@ -954,7 +954,7 @@ function generateModernAISmartSuggestions() {
             confidence: 89
         });
     }
-    
+
     const categoryCount = {};
     tasks.forEach(task => {
         categoryCount[task.category] = (categoryCount[task.category] || 0) + 1;
@@ -969,10 +969,10 @@ function generateModernAISmartSuggestions() {
     }
 
 
-    const highPriorityPending = tasks.filter(task => 
+    const highPriorityPending = tasks.filter(task =>
         task.status === 'pending' && task.priority === 'high'
     ).length;
-    
+
     if (highPriorityPending > 2) {
         suggestions.push({
             title: "High-Priority Task Professional Alert",
@@ -980,7 +980,7 @@ function generateModernAISmartSuggestions() {
             confidence: 97
         });
     }
-    
+
     return suggestions.slice(0, 3);
 }
 
@@ -994,7 +994,7 @@ function generateModernScheduleOptimizations() {
         "🌅 Place challenging subjects in the morning slot (professional optimization)",
         "💼 Apply modern time-blocking for better professional preparation"
     ];
-    
+
     return `
         <div class="ai-optimization-results" style="background: rgba(0, 119, 182, 0.06); padding: 20px; border-radius: 12px; border-left: 4px solid #0077B6;">
             <h4 style="color: #0077B6; margin-bottom: 16px;">✨ Modern AI Schedule Optimizations</h4>
@@ -1009,7 +1009,7 @@ function generateModernScheduleOptimizations() {
 function findModernScheduleConflicts() {
     const conflicts = [];
     const timeSlotMap = {};
-    
+
     tasks.forEach(task => {
         const key = `${task.day}-${task.time}`;
         if (timeSlotMap[key]) {
@@ -1021,14 +1021,14 @@ function findModernScheduleConflicts() {
             timeSlotMap[key] = task;
         }
     });
-    
+
     return conflicts;
 }
 
 function findModernAlternativeTime(day, currentTime) {
     const currentHour = parseInt(currentTime.split(':')[0]);
     const alternatives = [currentHour + 1, currentHour - 1, currentHour + 2];
-    
+
     for (let altHour of alternatives) {
         if (altHour >= 8 && altHour <= 21) {
             const altTime = `${altHour.toString().padStart(2, '0')}:00-${(altHour + 1).toString().padStart(2, '0')}:00`;
@@ -1038,8 +1038,8 @@ function findModernAlternativeTime(day, currentTime) {
             }
         }
     }
-    
-    return "18:00-19:00"; 
+
+    return "18:00-19:00";
 }
 
 function getNextModernAvailableDay(currentDay) {
@@ -1054,25 +1054,25 @@ function generateModernAITaskSuggestions(category, day) {
         "Self Study": ["10:00-11:00", "14:00-15:00", "19:00-20:00", "20:00-21:00"],
         "Project": ["14:00-16:00", "16:00-18:00", "10:00-12:00", "15:00-17:00"]
     };
-    
+
     const suggestions = modernOptimalTimes[category] || modernOptimalTimes["Self Study"];
     const dayTasks = day ? tasks.filter(task => task.day === day) : [];
     const busyTimes = dayTasks.map(task => task.time);
-    
+
     const available = suggestions.filter(time => !busyTimes.includes(time));
-    
+
     if (day && available.length === 0) {
         return `<p style="color: #FFB703; padding: 12px; background: rgba(255, 179, 3, 0.08); border-radius: 8px; border-left: 4px solid #FFB703;">🤖 Modern AI Analysis: ${day} is at capacity. Consider ${getNextModernAvailableDay(day)} for optimal professional results.</p>`;
     }
-    
+
     return `
         <div class="ai-task-suggestions">
             <p><strong style="color: #0077B6;">🤖 Modern AI Recommendations for ${category}:</strong></p>
-            ${available.slice(0, 3).map(time => 
-                `<div class="ai-time-rec" onclick="selectTimeSlot('${time}')" style="padding: 8px 12px; margin: 6px 0; background: rgba(6, 214, 160, 0.08); border-radius: 6px; cursor: pointer; border-left: 4px solid #06D6A0;">
+            ${available.slice(0, 3).map(time =>
+        `<div class="ai-time-rec" onclick="selectTimeSlot('${time}')" style="padding: 8px 12px; margin: 6px 0; background: rgba(6, 214, 160, 0.08); border-radius: 6px; cursor: pointer; border-left: 4px solid #06D6A0;">
                     ⭐ ${time} - Modern optimized for ${category.toLowerCase()} (Professional grade)
                 </div>`
-            ).join('')}
+    ).join('')}
         </div>
     `;
 }
@@ -1083,10 +1083,10 @@ function generateModernTaskInsight(task) {
         "Self Study": `Self-study sessions show optimal results when scheduled after ${getModernOptimalPrerequisite(task.category)}. Your current timing aligns with modern productivity standards.`,
         "Project": `Project work benefits from extended focus blocks. Modern AI analysis suggests this timing is excellent for deep work and professional-level output.`
     };
-    
+
     const timeQuality = getModernTimeEfficiencyScore(task.time);
     const efficiency = timeQuality > 85 ? "excellent" : timeQuality > 75 ? "very good" : timeQuality > 65 ? "good" : "fair";
-    
+
     return `
         <p style="color: #1A1D23; line-height: 1.6;">${modernInsights[task.category] || "Modern AI is analyzing this task type for professional optimization opportunities."}</p>
         <p style="color: #1A1D23; margin: 12px 0;"><strong>Modern Efficiency Rating:</strong> <span style="color: #0077B6;">${efficiency.charAt(0).toUpperCase() + efficiency.slice(1)} (${timeQuality}%)</span></p>
@@ -1101,7 +1101,7 @@ function generateModernTaskOptimization(task) {
         `Break this ${task.category.toLowerCase()} into 45-minute focused blocks with optimized breaks`,
         `Schedule a related practice session within 2 days using modern spaced repetition`
     ];
-    
+
     return modernOptimizations[Math.floor(Math.random() * modernOptimizations.length)];
 }
 
@@ -1128,7 +1128,7 @@ function getModernProductivityTip(category, time) {
         afternoon: "Perfect for collaborative work and practical applications (professional standard)",
         evening: "Ideal for review, reflection, and consolidation using modern techniques"
     };
-    
+
     if (hour < 12) return modernTips.morning;
     if (hour < 18) return modernTips.afternoon;
     return modernTips.evening;
@@ -1137,7 +1137,7 @@ function getModernProductivityTip(category, time) {
 function getModernOptimalTimeForCategory(category) {
     const modernOptimal = {
         "Class": "10:00-11:30",
-        "Self Study": "10:00-12:00", 
+        "Self Study": "10:00-12:00",
         "Project": "14:00-16:00"
     };
     return modernOptimal[category] || "10:00-12:00";
@@ -1149,7 +1149,7 @@ function updateModernAIMetrics() {
     const optimizationScore = document.getElementById('optimization-score');
     const patternRecognition = document.getElementById('pattern-recognition');
     const aiRecommendationsCount = document.getElementById('ai-recommendations-count');
-    
+
     if (predictionAccuracy) predictionAccuracy.textContent = '96%';
     if (optimizationScore) optimizationScore.textContent = calculateModernAIOptimizationScore() + '%';
     if (patternRecognition) patternRecognition.textContent = '15';
@@ -1166,7 +1166,7 @@ function clearForm() {
     if (conflictWarning) {
         conflictWarning.classList.add('hidden');
     }
-    
+
 
     const aiTimeSuggestion = document.getElementById('ai-time-suggestion');
     if (aiTimeSuggestion) {
@@ -1177,7 +1177,7 @@ function clearForm() {
 function addTask(event) {
     event.preventDefault();
     console.log('Modern form submitted, adding task...');
-    
+
     const formData = {
         title: document.getElementById('task-title').value.trim(),
         category: document.getElementById('task-category').value,
@@ -1225,7 +1225,7 @@ function addTask(event) {
     console.log('Creating modern task:', newTask);
     tasks.push(newTask);
     saveData();
-    
+
     showMessage('✨ Task added successfully with modern AI optimization applied!', 'success');
     setTimeout(() => showDashboard(), 1500);
 }
@@ -1249,9 +1249,9 @@ function renderModernStats() {
 function renderModernCategoryChart() {
     const canvas = document.getElementById('category-chart');
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
-    
+
     const categoryData = {};
     tasks.forEach(task => {
         categoryData[task.category] = (categoryData[task.category] || 0) + 1;
@@ -1290,7 +1290,7 @@ function renderModernCategoryChart() {
             }
         }
     });
-    
+
 
     const insight = document.getElementById('category-ai-insight');
     if (insight) {
@@ -1302,9 +1302,9 @@ function renderModernCategoryChart() {
 function renderModernPerformanceChart() {
     const canvas = document.getElementById('performance-chart');
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
-    
+
     const performanceData = days.map(day => {
         const dayTasks = tasks.filter(task => task.day === day);
         const completed = dayTasks.filter(task => task.status === 'completed').length;
@@ -1359,7 +1359,7 @@ function renderModernPerformanceChart() {
             }
         }
     });
-    
+
 
     const insight = document.getElementById('performance-ai-insight');
     if (insight) {
@@ -1369,14 +1369,14 @@ function renderModernPerformanceChart() {
 }
 
 function updateModernFocusMeter() {
-    const completionRate = tasks.length > 0 ? 
+    const completionRate = tasks.length > 0 ?
         (stats.completedTasks / tasks.length) * 100 : 0;
-    
+
     const focusPercentage = document.getElementById('focus-percentage');
     if (focusPercentage) {
         focusPercentage.textContent = Math.round(completionRate) + '%';
     }
-    
+
     const progressCircle = document.querySelector('.progress-circle');
     if (progressCircle) {
         const angle = (completionRate / 100) * 360;
@@ -1389,20 +1389,20 @@ function updateModernWeeklySummary() {
     if (totalHoursElement) {
         totalHoursElement.textContent = stats.totalHours + ' hrs';
     }
-    
-    const completionRate = tasks.length > 0 ? 
+
+    const completionRate = tasks.length > 0 ?
         Math.round((stats.completedTasks / tasks.length) * 100) : 0;
     const completionRateElement = document.getElementById('completion-rate');
     if (completionRateElement) {
         completionRateElement.textContent = completionRate + '%';
     }
-    
+
     const dayActivity = {};
     tasks.forEach(task => {
         dayActivity[task.day] = (dayActivity[task.day] || 0) + 1;
     });
-    
-    const mostActiveDay = Object.keys(dayActivity).reduce((a, b) => 
+
+    const mostActiveDay = Object.keys(dayActivity).reduce((a, b) =>
         (dayActivity[a] || 0) > (dayActivity[b] || 0) ? a : b, 'Monday');
     const activeDayElement = document.getElementById('active-day');
     if (activeDayElement) {
@@ -1418,7 +1418,7 @@ function updateModernAIAnalytics() {
 function renderModernPDFTable() {
     const tbody = document.getElementById('schedule-tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = '';
 
     const sortedTasks = [...tasks].sort((a, b) => {
@@ -1430,7 +1430,7 @@ function renderModernPDFTable() {
     sortedTasks.forEach(task => {
         const row = document.createElement('tr');
         const aiPriority = getModernAICalculatedPriority(task);
-        
+
         row.innerHTML = `
             <td>${task.day}</td>
             <td>${task.time}</td>
@@ -1453,7 +1453,7 @@ function renderModernPDFTable() {
         `;
         tbody.appendChild(row);
     });
-    
+
 
     const exportScore = document.getElementById('export-optimization-score');
     if (exportScore) {
@@ -1464,12 +1464,12 @@ function renderModernPDFTable() {
 function getModernAICalculatedPriority(task) {
     const timeEfficiency = getModernTimeEfficiencyScore(task.time);
     const originalPriority = task.priority;
-    
+
     if (originalPriority === 'high' && timeEfficiency > 90) return 'High';
     if (originalPriority === 'high' && timeEfficiency > 75) return 'Medium';
     if (originalPriority === 'medium' && timeEfficiency > 92) return 'High';
     if (originalPriority === 'low' && timeEfficiency < 65) return 'Low';
-    
+
     return task.priority.charAt(0).toUpperCase() + task.priority.slice(1);
 }
 
@@ -1477,16 +1477,16 @@ function getModernAICalculatedPriority(task) {
 function showMessage(text, type = 'info') {
     const messageContainer = document.getElementById('message-container');
     const message = document.getElementById('message');
-    
+
     if (!messageContainer || !message) {
         console.log('Modern Message:', text);
         return;
     }
-    
+
     message.textContent = text;
     message.className = `message ${type}`;
     messageContainer.classList.remove('hidden');
-    
+
     setTimeout(() => {
         messageContainer.classList.add('hidden');
     }, 4500);
@@ -1495,7 +1495,7 @@ function showMessage(text, type = 'info') {
 
 function setupEventListeners() {
     console.log('Setting up modern enhanced event listeners...');
-    
+
     const addTaskForm = document.getElementById('add-task-form');
     if (addTaskForm) {
         addTaskForm.addEventListener('submit', addTask);
@@ -1511,14 +1511,14 @@ function setupEventListeners() {
 
     const taskTime = document.getElementById('task-time');
     if (taskTime) {
-        taskTime.addEventListener('input', function() {
+        taskTime.addEventListener('input', function () {
             const day = document.getElementById('task-day').value;
             const time = this.value;
-            
+
             if (day && time) {
                 const hasConflict = checkTimeConflict(day, time);
                 const warningElement = document.getElementById('conflict-warning');
-                
+
                 if (warningElement) {
                     if (hasConflict) {
                         warningElement.classList.remove('hidden');
@@ -1532,14 +1532,14 @@ function setupEventListeners() {
 
     const taskModal = document.getElementById('task-modal');
     if (taskModal) {
-        taskModal.addEventListener('click', function(e) {
+        taskModal.addEventListener('click', function (e) {
             if (e.target === this) {
                 closeTaskModal();
             }
         });
     }
 
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             closeTaskModal();
 
@@ -1549,6 +1549,6 @@ function setupEventListeners() {
             }
         }
     });
-    
+
     console.log('Modern enhanced event listeners setup complete');
 }
