@@ -437,8 +437,35 @@ function selectTimeSlot(time) {
 }
 
 function downloadPDF() {
-    console.log('Modern PDF download initiated');
-    showMessage('📄 Modern PDF export simulation - This would generate a professional-grade PDF with modern design and AI insights suitable for both academic and corporate use.', 'info');
+    const { jsPDF } = window.jspdf; 
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+    doc.text("WeekWize AI - Schedule Export", 14, 20);
+
+    const score = calculateModernAIOptimizationScore();
+    doc.setFontSize(12);
+    doc.text(`AI Optimization Score: ${score}%`, 14, 30);
+
+
+    const table = document.getElementById("schedule-tbody").parentElement; 
+
+
+    if (doc.autoTable) {
+        doc.autoTable({ html: table, startY: 40 });
+    } else {
+
+        let yPos = 40;
+        table.querySelectorAll("tr").forEach(row => {
+            let rowText = Array.from(row.querySelectorAll("td, th"))
+                               .map(cell => cell.innerText)
+                               .join(" | ");
+            doc.text(rowText, 14, yPos);
+            yPos += 8;
+        });
+    }
+
+    doc.save(`WeekWize_Schedule_${new Date().toISOString().split('T')[0]}.pdf`);
 }
 
 function sendModernAIMessage() {
